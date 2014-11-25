@@ -1,16 +1,15 @@
 <?php
-require("./services/helper.php");
 //start a php session
 session_name("customer");
 session_start("customer");
-helpers::getHeader("About Us");
+helpers::getHeader("Contact Us");
 ?>
 
 <body>
-    <div class="about-us banner">
-        <div class="banner-text">About Us</div>
+    <div class="contact-us banner">
+        <div class="banner-text">Contact Us</div>
     </div>
-    <?php helpers::getNavBar("About Us");?>
+    <?php helpers::getNavBar("Contact Us");?>
     <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut nunc ex. Curabitur euismod vehicula
            ultrices. Vestibulum ultrices facilisis nunc et blandit. Nam pretium in elit sit amet sodales. Aenean

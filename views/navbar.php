@@ -16,9 +16,9 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li <?php if($title == "Home"){ echo 'class="active"';}?> ><a href="/Conceptual">Home</a></li>
-                        <li <?php if($title == "About Us"){ echo 'class="active"';}?> ><a href="/Conceptual/about-us.php">About Us</a></li>
-                        <li <?php if($title == "Contact Us"){ echo 'class="active"';}?> ><a href="/Conceptual/contact-us.php">Contact Us</a></li>
+                        <li <?php if($title == "Home"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual">Home</a></li>
+                        <li <?php if($title == "About Us"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual/index.php/aboutus">About Us</a></li>
+                        <li <?php if($title == "Contact Us"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual/index.php/contactus">Contact Us</a></li>
                         <li <?php if($title == "Products"){ echo 'class="active"';}?> class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Products</a>
                             <ul class="dropdown-menu" role="menu">

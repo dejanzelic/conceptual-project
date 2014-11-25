@@ -44,6 +44,10 @@
 .logout .dropdown-menu{
     text-align: center;
 }
+.loginForm .register{
+    float: left;
+    margin-top: 10px;
+}
 /*========================Content===========================*/
 p{
     font-size: 20px;

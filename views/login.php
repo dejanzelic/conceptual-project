@@ -1,5 +1,4 @@
 <?php
-require("./services/helper.php");
 //start a php session
 session_name("customer");
 session_start("customer");
@@ -19,7 +18,7 @@ helpers::getHeader("Log in");
     <div class="row">
         <div class="col-lg-6">
             <h2>Log In</h2>
-            <form action="services/process.php" method="post">
+            <form action="../services/process.php" method="post">
                 <div class="form-group">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
                     <br/>
@@ -31,7 +30,7 @@ helpers::getHeader("Log in");
         </div>
         <div class="col-lg-6">
             <h2>Register</h2>
-            <form action="services/register.php" method="post">
+            <form action="../services/register.php" method="post">
                 <div class="form-group" >
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
                     <br/>

@@ -7,6 +7,7 @@
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Enter Email">
                     <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                    <div class="register"><a href="/dzelic/Conceptual/index.php/login">Click Here to Register</a></div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </div>
             </form>

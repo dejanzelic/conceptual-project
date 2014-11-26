@@ -2,20 +2,16 @@
 require 'Slim/Slim.php';
 \Slim\Slim::registerAutoloader();
 
+require 'Bootstrap.php';
+
+
+
 
 /**
  * Instantiate a Slim application
  */
-$app = new \Slim\Slim();
 
-/**
- * Define the Slim application routes
- * `Slim::get`, `Slim::post`, `Slim::put`, `Slim::patch`, and `Slim::delete`
- */
-
-$app->config(array(
-    'templates.path' => './views',
-));
+$app = Bootstrap::getApp();
 
 require("services/load.php");
 require("controllers/pages.php");

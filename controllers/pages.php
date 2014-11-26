@@ -4,7 +4,13 @@
 $app->get(
     '/',
     function () use ($app) {
-        $app->render("index.php");
+        session_name("customer");
+        session_start("customer");
+
+        $app->render("index.php", array(
+            'title' => 'Home',
+            'subtitle'=> 'De-Clutter Your Life'
+        ));
     }
 );
 //===============ABOUT US=================

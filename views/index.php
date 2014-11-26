@@ -1,16 +1,8 @@
 <?php
 ////start a php session
-//session_name("customer");
-//session_start("customer");
-helpers::getHeader("Home");
 ?>
 
-<body>
-<div class="home banner">
-    <div class="banner-text">De-Clutter Your life</div>
-</div>
-<?php helpers::getNavBar("Home");?>
-<div class="container">
+
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut nunc ex. Curabitur euismod vehicula
         ultrices. Vestibulum ultrices facilisis nunc et blandit. Nam pretium in elit sit amet sodales. Aenean
         rutrum malesuada lacus sit amet tincidunt. Sed congue, tellus eu pharetra sodales, ante augue tristique
@@ -34,6 +26,3 @@ helpers::getHeader("Home");
         non iaculis ante congue id. Vivamus a nulla venenatis, blandit elit id, molestie eros. Nullam ac enim
         semper, consectetur dui vel, tristique urna. Sed quis tristique tortor. Sed aliquam massa et ex semper
         ultricies. Praesent porta nisl vel nunc condimentum, et porttitor augue varius.</p>
-</div>
-<?php helpers::getscripts();?>
-</body>

@@ -3,8 +3,8 @@
 class DBConnect
 {
     private static $host = 'localhost';
-    private static $user = 'root';
-    private static $pw = 'root';
+    private static $user = 'Conceptual';
+    private static $pw = 'BYBCMst7AHBEb4Qx';
     private static $db = 'Conceptual';
 
     public static function init()

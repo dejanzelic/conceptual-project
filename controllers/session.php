@@ -3,6 +3,7 @@
 $app->get(
     '/login',
     function () use ($app) {
+        $dbc = $app->database;
         $app->render("login.php");
     }
 );

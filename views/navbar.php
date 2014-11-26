@@ -32,6 +32,7 @@
                     if(isset($_SESSION["customer"])){
                         helpers::getLoggedInView($title);
                     }else{
+                        echo
                         helpers::getLogInForm($title);
                     }
                     ?>

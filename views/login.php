@@ -18,7 +18,7 @@ helpers::getHeader("Log in");
     <div class="row">
         <div class="col-lg-6">
             <h2>Log In</h2>
-            <form action="../services/process.php" method="post">
+            <form action="/dzelic/Conceptual/index.php/login" method="post">
                 <div class="form-group">
                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
                     <br/>

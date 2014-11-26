@@ -1,6 +1,6 @@
 <?php
 //No idea why this is the only way but I needed to include Document root to get this to work
-include($_SERVER['DOCUMENT_ROOT'].'/services/dbconnect.php');
+include("{$_SERVER['DOCUMENT_ROOT']}/dzelic/Conceptual/services/dbconnect.php");
 $name = 'Unchanged';
 $stmt = $dbc->stmt_init();
 if ($stmt->prepare("SELECT name FROM user WHERE id = ?")) {

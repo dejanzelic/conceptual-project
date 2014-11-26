@@ -1,6 +1,5 @@
 <?php
 require 'Slim/Slim.php';
-require("services/helper.php");
 \Slim\Slim::registerAutoloader();
 
 
@@ -17,64 +16,11 @@ $app = new \Slim\Slim();
 $app->config(array(
     'templates.path' => './views',
 ));
-//===============ROOT=================
-// GET route
-$app->get(
-    '/',
-    function () use ($app) {
-        $app->render("index.php");
-    }
-);
-//===============ABOUT US=================
-$app->get(
-    '/aboutus',
-    function () use ($app) {
-        $app->render("about-us.php");
-    }
-);
-//===============CONTACT US=================
-$app->get(
-    '/contactus',
-    function () use ($app) {
-        $app->render("contact-us.php");
-    }
-);
-//===============CONTACT US=================
-$app->get(
-    '/login',
-    function () use ($app) {
-        $app->render("login.php");
-    }
-);
-//+++++++++++SAMPLES++++++++++++++++
-// POST route
-$app->post(
-    '/post',
-    function () {
-        echo 'This is a POST route';
-    }
-);
 
-// PUT route
-$app->put(
-    '/put',
-    function () {
-        echo 'This is a PUT route';
-    }
-);
+require("services/load.php");
+require("controllers/pages.php");
+require("controllers/session.php");
 
-// PATCH route
-$app->patch('/patch', function () {
-    echo 'This is a PATCH route';
-});
-
-// DELETE route
-$app->delete(
-    '/delete',
-    function () {
-        echo 'This is a DELETE route';
-    }
-);
 
 /**
  * Run the Slim application

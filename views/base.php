@@ -1,3 +1,6 @@
+<?php
+$flash = $this->getData('flash');
+?>
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -51,10 +54,10 @@
                             </ul>
                         </li>
                     </ul>
-                    <?php if(!isset($_SESSION["customer"])){ ?>
+                    <?php if($this->getData('user') !== null){ ?>
                     <ul class="nav navbar-nav navbar-right logout">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Hello <?php echo $name; ?></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Hello <?php echo $this->getData('user')->name; ?></a>
                             <ul class="dropdown-menu" role="menu">
                                 <form class="navbar-form" action="/Conceptual/services/endSession.php">
                                     <button type="submit" class="btn btn-default">Submit</button>
@@ -67,7 +70,7 @@
                             <li class="dropdown <?php if($this->data->title == "Log in"){ echo 'active';}?>">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Log In</a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <form class="navbar-form" action="/Conceptual/services/process.php" method="post">
+                                    <form class="navbar-form" action="/dzelic/Conceptual/index.php/login" method="post">
                                         <div class="form-group">
                                             <input type="email" class="form-control" name="email" placeholder="Enter Email">
                                             <input type="password" class="form-control" name="password" placeholder="Enter Password">
@@ -86,6 +89,18 @@
 </div>
 
 <div class="container">
+    <?php if (isset($flash['success'])){  ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $flash['success']; ?>
+        </div>
+    <?php }?>
+    <?php if (isset($flash['error'])){  ?>
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <?php echo $flash['error']; ?>
+        </div>
+    <?php }?>
     <?php echo $this->content; ?>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

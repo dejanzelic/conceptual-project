@@ -1,8 +1,3 @@
-<?php
-////start a php session
-?>
-
-
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut nunc ex. Curabitur euismod vehicula
         ultrices. Vestibulum ultrices facilisis nunc et blandit. Nam pretium in elit sit amet sodales. Aenean
         rutrum malesuada lacus sit amet tincidunt. Sed congue, tellus eu pharetra sodales, ante augue tristique

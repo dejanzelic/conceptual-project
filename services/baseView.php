@@ -5,6 +5,13 @@ class BaseView extends \Slim\View
     protected $_layout = NULL;
     protected $_data   = NULL;
     protected $content = NULL;
+    protected $app     = NULL;
+
+    public function __construct()
+    {
+        //$this->app = $app;
+        parent::__construct();
+    }
 
     public function set_layout($layout = NULL, $data = array())
     {

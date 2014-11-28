@@ -1,18 +1,3 @@
-<?php
-//start a php session
-//session_name("customer");
-//session_start("customer");
-//if(isset($_SESSION["customer"])){
-//    header('Location: account.php');
-//}
-//helpers::getHeader("Log in");
-?>
-
-<!--<div class="login banner">-->
-<!--    <div class="banner-text">Log in/Register</div>-->
-<!--</div>-->
-<?php //helpers::getNavBar("Log in");?>
-<!--<div class="container">-->
     <div class="messages"><?php if(isset($_GET['message'])){echo $_GET['message']; }  ?></div>
     <div class="row">
         <div class="col-lg-6">

@@ -4,9 +4,6 @@
 $app->get(
     '/',
     function () use ($app) {
-        session_name("customer");
-        session_start("customer");
-
         $app->render("index.php", array(
             'title' => 'Home',
             'subtitle'=> 'De-Clutter Your Life'

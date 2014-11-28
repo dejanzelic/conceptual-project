@@ -41,8 +41,16 @@ $app->get(
     }
 );
 $app->post(
-    'register',
+    '/register',
     function () use ($app) {
+        $register = User::register($_POST['email'], $_POST['name'], hash('SHA256',$_POST['password']));
+        if ($register['success'] === true){
+            $app->flash('success', $register['message']);
+            $app->redirect('/dzelic/Conceptual/index.php/login');
+        }else{
+            $app->flash('error', $register['message']);
+            $app->redirect('/dzelic/Conceptual/index.php/login');
+        }
 
     }
 );

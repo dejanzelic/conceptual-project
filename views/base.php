@@ -43,8 +43,8 @@ $flash = $this->getData('flash');
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li <?php if($this->data->title == "Home"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual">Home</a></li>
-                        <li <?php if($this->data->title == "About Us"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual/index.php/aboutus">About Us</a></li>
-                        <li <?php if($this->data->title == "Contact Us"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual/index.php/contactus">Contact Us</a></li>
+                        <li <?php if($this->data->title == "About-Us"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual/index.php/aboutus">About Us</a></li>
+                        <li <?php if($this->data->title == "Contact-Us"){ echo 'class="active"';}?> ><a href="/dzelic/Conceptual/index.php/contactus">Contact Us</a></li>
                         <li <?php if($this->data->title == "Products"){ echo 'class="active"';}?> class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Products</a>
                             <ul class="dropdown-menu" role="menu">

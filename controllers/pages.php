@@ -14,13 +14,19 @@ $app->get(
 $app->get(
     '/aboutus',
     function () use ($app) {
-        $app->render("about-us.php");
+        $app->render("aboutus.php", array(
+            'title' => 'About-Us',
+            'subtitle'=> 'De-Clutter Your Life'
+        ));
     }
 );
 //===============CONTACT US=================
 $app->get(
     '/contactus',
     function () use ($app) {
-        $app->render("contact-us.php");
+        $app->render("contactus.php", array(
+            'title' => 'Contact-Us',
+            'subtitle'=> 'De-Clutter Your Life'
+        ));
     }
 );

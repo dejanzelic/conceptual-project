@@ -23,7 +23,7 @@ $flash = $this->getData('flash');
 </head>
 <body>
 
-<div class="home banner">
+<div class="<?php echo $this->data->title ?> banner">
     <div class="banner-text"><?php echo $this->data->subtitle; ?></div>
 </div>
 <!-- Static navbar -->
@@ -59,8 +59,8 @@ $flash = $this->getData('flash');
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Hello <?php echo $this->getData('user')->name; ?></a>
                             <ul class="dropdown-menu" role="menu">
-                                <form class="navbar-form" action="/Conceptual/services/endSession.php">
-                                    <button type="submit" class="btn btn-default">Submit</button>
+                                <form class="navbar-form" action="/dzelic/Conceptual/index.php/logout">
+                                    <button type="submit" class="btn btn-default">Log Out</button>
                                 </form>
                             </ul>
                         </li>
@@ -75,7 +75,7 @@ $flash = $this->getData('flash');
                                             <input type="email" class="form-control" name="email" placeholder="Enter Email">
                                             <input type="password" class="form-control" name="password" placeholder="Enter Password">
                                             <div class="register"><a href="/dzelic/Conceptual/index.php/login">Click Here to Register</a></div>
-                                            <button type="submit" class="btn btn-default">Submit</button>
+                                            <button type="submit" class="btn btn-default">Log In</button>
                                         </div>
                                     </form>
                                 </ul>
@@ -89,18 +89,29 @@ $flash = $this->getData('flash');
 </div>
 
 <div class="container">
+    <!--+++++++++++++++++Success++++++++++++++++++++++-->
     <?php if (isset($flash['success'])){  ?>
+
         <div class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             <?php echo $flash['success']; ?>
         </div>
     <?php }?>
+    <!--+++++++++++++++++Error++++++++++++++++++++++-->
     <?php if (isset($flash['error'])){  ?>
         <div class="alert alert-danger" role="alert">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span>
             <?php echo $flash['error']; ?>
         </div>
     <?php }?>
+    <!--+++++++++++++++++Warning++++++++++++++++++++++-->
+    <?php if (isset($flash['warning'])){  ?>
+        <div class="alert alert-warning" role="alert">
+            <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+            <?php echo $flash['warning']; ?>
+        </div>
+    <?php }?>
+    <!--+++++++++++++++++Content++++++++++++++++++++++-->
     <?php echo $this->content; ?>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>

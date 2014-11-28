@@ -1,14 +1,14 @@
 /*========================banner===========================*/
-.home{
+.Home{
     background-image: url('../images/home.jpg');
 }
-.login{
+.Log-In{
     background-image: url('../images/login.jpg');
 }
-.about-us{
+.About-Us{
     background-image: url('../images/about-us.jpg');
 }
-.contact-us{
+.Contact-Us{
     background-image: url('../images/contact-us.jpg');
 }
 .banner{

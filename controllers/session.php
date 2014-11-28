@@ -3,8 +3,16 @@
 $app->get(
     '/login',
     function () use ($app) {
-        $dbc = $app->database;
-        $app->render("login.php");
+        if (User::getCurrentUser() === NULL){
+            $dbc = $app->database;
+            $app->render("login.php", array(
+                'title' => 'Log-In',
+                'subtitle'=> 'Log In'
+            ));
+        }else{
+            $app->flash('warning', 'No need to log in again, you are already logged in!');
+            $app->redirect('/dzelic/Conceptual/index.php');
+        }
     }
 );
 
@@ -13,15 +21,14 @@ $app->post(
     function () use ($app) {
         //@TODO Validate user passed in email and password
         $successLogin = User::login($_POST['email'],$_POST['password']);
-        if( $successLogin !== false){
+        if( $successLogin !== null){
             $app->flash('success', 'You have logged in!');
-            //@TODO: display flash message for successful login
-            //@TODO: redirect to wherever
+            $app->redirect('/dzelic/Conceptual/index.php');
         } else {
-
-
-            //@TODO: display flash message for unsuccessful login
+            $app->flash('error', 'Incorrect user name or password!');
+            $app->redirect('/dzelic/Conceptual/index.php/login');
         }
+
     }
 );
 
@@ -29,8 +36,13 @@ $app->get(
     '/logout',
     function () use ($app) {
         session_unset("customer");
-        session_destroy("customer");
+        session_destroy();
+        $app->redirect('/dzelic/Conceptual/index.php/login');
+    }
+);
+$app->post(
+    'register',
+    function () use ($app) {
 
-        //@TODO redirct to whever
     }
 );

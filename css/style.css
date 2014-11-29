@@ -5,6 +5,9 @@
 .Log-In{
     background-image: url('../images/login.jpg');
 }
+.Account{
+    background-image: url('../images/login.jpg');
+}
 .About-Us{
     background-image: url('../images/about-us.jpg');
 }
@@ -47,6 +50,13 @@
 .loginForm .register{
     float: left;
     margin-top: 10px;
+}
+.logout .dropdown-menu{
+    padding: 16px;
+    padding-top: 30px;
+}
+.logout button{
+    width: 100%;
 }
 /*========================Content===========================*/
 p{

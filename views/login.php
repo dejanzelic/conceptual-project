@@ -1,4 +1,3 @@
-<div class="messages"><?php if(isset($_GET['message'])){echo $_GET['message']; }  ?></div>
 <div class="row">
     <div class="col-lg-6">
         <h2>Log In</h2>

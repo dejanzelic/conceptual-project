@@ -1,5 +1,6 @@
 <?php
 $flash = $this->getData('flash');
+$user = $this->getData('user');
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -54,21 +55,24 @@ $flash = $this->getData('flash');
                             </ul>
                         </li>
                     </ul>
-                    <?php if($this->getData('user') !== null){ ?>
+                    <?php if($user !== null){ ?>
                     <ul class="nav navbar-nav navbar-right logout">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Hello <?php echo $this->getData('user')->name; ?></a>
+                        <li class="dropdown <?php if($this->data->title == "Log-in" || $this->data->title == "Account"){ echo 'active';}?>">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Hello, <?php echo $user->name; ?><span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <form class="navbar-form" action="/dzelic/Conceptual/index.php/logout">
-                                    <button type="submit" class="btn btn-default">Log Out</button>
-                                </form>
+                                <p><a href="/dzelic/Conceptual/index.php/account">
+                                    <button class="btn btn-info">My Account</button>
+                                </a></p>
+                                <p></p><a href="/dzelic/Conceptual/index.php/logout">
+                                    <button class="btn btn-danger">Log out</button>
+                                </a></p>
                             </ul>
                         </li>
                     </ul>
                     <?php } else {  ?>
                         <ul class="nav navbar-nav navbar-right loginForm">
-                            <li class="dropdown <?php if($this->data->title == "Log in"){ echo 'active';}?>">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Log In</a>
+                            <li class="dropdown <?php if($this->data->title == "Log-In"){ echo 'active';}?>">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Log In <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <form class="navbar-form" action="/dzelic/Conceptual/index.php/login" method="post">
                                         <div class="form-group">

@@ -5,8 +5,6 @@ require 'Slim/Slim.php';
 require 'Bootstrap.php';
 
 session_cache_limiter(false);
-session_name("customer");
-session_start('customer');
 
 /**
  * Instantiate a Slim application

@@ -1,3 +1,22 @@
+
+<div class="center-content">
+    <div class="row">
+        <div class="col-lg-4">
+            <span class="icons red glyphicon glyphicon-heart"></span>
+            <p>Top-Rated</p>
+        </div>
+        <div class="col-lg-4">
+            <span class="icons slate glyphicon glyphicon-lock"></span>
+            <p>Super Secure</p>
+        </div>
+        <div class="col-lg-4">
+            <span class="icons green glyphicon glyphicon-tree-conifer"></span>
+            <p>Eco-Friendly</p>
+        </div>
+    </div>
+    </br>
+    <img src="images/showcase.jpg">
+</div>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut nunc ex. Curabitur euismod vehicula
     ultrices. Vestibulum ultrices facilisis nunc et blandit. Nam pretium in elit sit amet sodales. Aenean
     rutrum malesuada lacus sit amet tincidunt. Sed congue, tellus eu pharetra sodales, ante augue tristique

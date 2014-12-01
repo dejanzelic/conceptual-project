@@ -30,7 +30,7 @@ $user = $this->getData('user');
 <!-- Static navbar -->
 <div class="navbar-wrapper">
     <div class="container">
-        <nav class="navbar navbar-default" role="navigation">
+        <nav class="navbar navbar-slate" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -49,9 +49,9 @@ $user = $this->getData('user');
                         <li <?php if($this->data->title == "Products"){ echo 'class="active"';}?> class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Products</a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">ConTask</a></li>
-                                <li><a href="#">ConCal</a></li>
-                                <li><a href="#">ConNotes</a></li>
+                                <li><a href="/dzelic/Conceptual/index.php/product/contask">ConTask</a></li>
+                                <li><a href="/dzelic/Conceptual/index.php/product/concal">ConCal</a></li>
+                                <li><a href="/dzelic/Conceptual/index.php/product/connotes">ConNotes</a></li>
                             </ul>
                         </li>
                     </ul>

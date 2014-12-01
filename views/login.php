@@ -7,7 +7,7 @@
                 <br/>
                 <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                 <br/>
-                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                <button type="submit" class="btn btn-success btn-lg btn-wide">Submit</button>
             </div>
         </form>
     </div>
@@ -27,7 +27,7 @@
                 <br/>
                 <input type="password" class="form-control" id="reenter" placeholder="Reenter Password">
                 <br/>
-                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-wide">Submit</button>
             </div>
         </form>
     </div>

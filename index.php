@@ -17,6 +17,7 @@ $app = Bootstrap::getApp();
 require("controllers/pages.php");
 require("controllers/session.php");
 require("controllers/account.php");
+require("controllers/product.php");
 
 
 /**

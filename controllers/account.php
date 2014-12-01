@@ -5,10 +5,9 @@ $app->get(
     '/account',
     function () use ($app) {
         if (User::getCurrentUser() !== NULL){
-            $user = User::getCurrentUser();
             $app->render("account.php", array(
                 'title' => 'Account',
-                'subtitle'=> 'Manage your Account',
+                'subtitle'=> 'Manage your Account'
             ));
         }else{
             $app->flash('warning', 'You need to be logged in to view your account!');

@@ -9,7 +9,7 @@ $(function() {
 		// This script sends Ajax requests to config-loader.php and relay.php using the path below
 		// We assume these files are in the 'jcart' directory, one level above this script
 		// Edit as needed if using a different directory structure
-		var path = 'jcart',
+		var path = '/dzelic/Conceptual/jcart',
 			container = $('#jcart'),
 			token = $('[name=jcartToken]').val(),
 			tip = $('#jcart-tooltip');
@@ -66,7 +66,7 @@ $(function() {
 			// Default settings for Ajax requests
 			$.ajaxSetup({
 				type: 'POST',
-				url: path + '/relay.php',
+				url: 'http://localhost/dzelic/Conceptual/index.php/cart',
 				success: function(response) {
 					// Refresh the cart display after a successful Ajax request
 					container.html(response);

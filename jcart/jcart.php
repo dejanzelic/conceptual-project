@@ -78,7 +78,7 @@ class Jcart {
 		if ($validPrice !== false && $validQty !== false) {
 
 			// If the item is already in the cart, increase its quantity
-			if($this->qtys[$id] > 0) {
+			if(isset($this->qtys[$id]) && $this->qtys[$id] > 0) {
 				$this->qtys[$id] += $qty;
 				$this->update_subtotal();
 			}
@@ -191,6 +191,7 @@ class Jcart {
 	*/
 	public function update_cart() {
 
+
 		// Post value is an array of all item quantities in the cart
 		// Treat array as a string for validation
 		if (is_array($_POST['jcartItemQty'])) {
@@ -261,11 +262,11 @@ class Jcart {
 	* Process and display cart
 	*/
 	public function display_cart() {
-
 		$config = $this->config; 
 		$errorMessage = null;
 
 		// Simplify some config variables
+
 		$checkout = $config['checkoutPath'];
 		$priceFormat = $config['priceFormat'];
 
@@ -276,19 +277,20 @@ class Jcart {
 		$url   = $config['item']['url'];
 		$add   = $config['item']['add'];
 
+
 		// Use config values as literal indices for incoming POST values
 		// Values are the HTML name attributes set in config.json
-		$id    = $_POST[$id];
-		$name  = $_POST[$name];
-		$price = $_POST[$price];
-		$qty   = $_POST[$qty];
-		$url   = $_POST[$url];
+		$id    = isset($_POST[$id])? $_POST[$id] : null;
+		$name  = isset($_POST[$name])? $_POST[$name] : null;
+		$price = isset($_POST[$price])? $_POST[$price] : null;
+		$qty   = isset($_POST[$qty])? $_POST[$qty] : null;
+		$url   = isset($_POST[$url])? $_POST[$url] : null;
 
 		// Optional CSRF protection, see: http://conceptlogic.com/jcart/security.php
-		$jcartToken = $_POST['jcartToken'];
+		$jcartToken = isset($_POST['jcartToken'])? $_POST['jcartToken'] : null;
 
 		// Only generate unique token once per session
-		if(!$_SESSION['jcartToken']){
+		if(!isset($_SESSION['jcartToken']) || !$_SESSION['jcartToken']){
 			$_SESSION['jcartToken'] = md5(session_id() . time() . $_SERVER['HTTP_USER_AGENT']);
 		}
 		// If enabled, check submitted token against session token for POST requests
@@ -306,8 +308,9 @@ class Jcart {
 			$qty = round($qty, $config['decimalPlaces']);
 		}
 
+
 		// Add an item
-		if ($_POST[$add]) {
+		if (isset($_POST[$add])) {
 			$itemAdded = $this->add_item($id, $name, $price, $qty, $url);
 			// If not true the add item function returns the error type
 			if ($itemAdded !== true) {
@@ -324,7 +327,7 @@ class Jcart {
 		}
 
 		// Update a single item
-		if ($_POST['jcartUpdate']) {
+		if (isset($_POST['jcartUpdate'])) {
 			$itemUpdated = $this->update_item($_POST['itemId'], $_POST['itemQty']);
 			if ($itemUpdated !== true)	{
 				$errorMessage = $config['text']['quantityError'];
@@ -332,7 +335,7 @@ class Jcart {
 		}
 
 		// Update all items in the cart
-		if($_POST['jcartUpdateCart'] || $_POST['jcartCheckout'])	{
+		if(isset($_POST['jcartUpdateCart']) || (isset($_POST['jcartCheckout']) )){
 			$cartUpdated = $this->update_cart();
 			if ($cartUpdated !== true)	{
 				$errorMessage = $config['text']['quantityError'];
@@ -345,12 +348,12 @@ class Jcart {
 		subsequent POST requests.  As result, it's not enough to check for
 		GET before deleting the item, must also check that this isn't a POST
 		request. */
-		if($_GET['jcartRemove'] && !$_POST) {
+		if((isset($_GET['jcartRemove'])) && !$_POST) {
 			$this->remove_item($_GET['jcartRemove']);
 		}
 
 		// Empty the cart
-		if($_POST['jcartEmpty']) {
+		if(isset($_POST['jcartEmpty'])) {
 			$this->empty_cart();
 		}
 
@@ -366,7 +369,7 @@ class Jcart {
 		sent with Ajax request (set when visitor has javascript enabled and
 		updates an item quantity). */
 		$isCheckout = strpos(request_uri(), $checkout);
-		if ($isCheckout !== false || $_REQUEST['jcartIsCheckout'] == 'true') {
+		if ($isCheckout !== false || (isset($_REQUEST['jcartIsCheckout']) && $_REQUEST['jcartIsCheckout'] == 'true')) {
 			$isCheckout = true;
 		}
 		else {
@@ -392,7 +395,7 @@ class Jcart {
 		// If this error is true the visitor updated the cart from the checkout page using an invalid price format
 		// Passed as a session var since the checkout page uses a header redirect
 		// If passed via GET the query string stays set even after subsequent POST requests
-		if ($_SESSION['quantityError'] === true) {
+		if (isset($_SESSION['quantityError']) && $_SESSION['quantityError'] === true) {
 			$errorMessage = $config['text']['quantityError'];
 			unset($_SESSION['quantityError']);
 		}
@@ -489,6 +492,7 @@ class Jcart {
 
 		// If this is the checkout hide the cart checkout button
 		if ($isCheckout !== true) {
+            $src = '';
 			if ($config['button']['checkout']) {
 				$inputType = "image";
 				$src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkout']}' title='' ";
@@ -579,15 +583,6 @@ class Jcart {
 		
 		echo tab(1) . "<div id='jcart-tooltip'></div>\n";
 	}
-}
-
-// Start a new session in case it hasn't already been started on the including page
-@session_start();
-
-// Initialize jcart after session start
-$jcart = $_SESSION['jcart'];
-if(!is_object($jcart)) {
-	$jcart = $_SESSION['jcart'] = new Jcart();
 }
 
 // Enable request_uri for non-Apache environments

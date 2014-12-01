@@ -1,6 +1,7 @@
 <?php
 $flash = $this->getData('flash');
 $user = $this->getData('user');
+$jcart = $this->getData('jcart');
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -66,6 +67,8 @@ $user = $this->getData('user');
                                 <p></p><a href="/dzelic/Conceptual/index.php/logout">
                                     <button class="btn btn-danger">Log out</button>
                                 </a></p>
+                                <li id="jcart"><?php $jcart->display_cart();?></li>
+
                             </ul>
                         </li>
                     </ul>
@@ -120,5 +123,7 @@ $user = $this->getData('user');
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src='/dzelic/Conceptual/js/bootstrap.min.js'></script>
+<script src='/dzelic/Conceptual/js/jcart.js'></script>
+
 </body>
 </html>

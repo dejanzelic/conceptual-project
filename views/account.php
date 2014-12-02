@@ -36,3 +36,4 @@
     </div>
 </div>
 
+<?php include 'partials/orderHistory.php' ?>

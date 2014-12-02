@@ -15,11 +15,6 @@ $app->map('/product/:slug', function($slug) use ($app) {
 })->via('GET', 'POST');
 
 //ajax method
-$app->post('/cart', function() use ($app) {
-    $app->request();
-    $jcart = $app->view->getData('jcart');
 
-    return $jcart->display_cart();
-});
 
  

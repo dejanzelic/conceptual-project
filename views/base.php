@@ -15,7 +15,9 @@ $jcart = $this->getData('jcart');
 
     <!-- CSS -->
     <link href='/dzelic/Conceptual/css/bootstrap.min.css' rel='stylesheet''>
+    <link href="/dzelic/Conceptual/css/toastr.min.css" rel="stylesheet"/>
     <link href='/dzelic/Conceptual/css/style.css' rel='stylesheet''>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -59,8 +61,8 @@ $jcart = $this->getData('jcart');
                     <?php if($user !== null){ ?>
                     <ul class="nav navbar-nav navbar-right logout">
                         <li class="dropdown <?php if($this->data->title == "Log-in" || $this->data->title == "Account"){ echo 'active';}?>">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Hello, <?php echo $user->name; ?><span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button">Hello, <?php echo $user->name; ?><span class="caret"></span></a>
+                            <ul class="dropdown-menu loggedIn" role="menu">
                                 <p><a href="/dzelic/Conceptual/index.php/account">
                                     <button class="btn btn-info">My Account</button>
                                 </a></p>
@@ -124,6 +126,8 @@ $jcart = $this->getData('jcart');
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src='/dzelic/Conceptual/js/bootstrap.min.js'></script>
 <script src='/dzelic/Conceptual/js/jcart.js'></script>
+<script src="/dzelic/Conceptual/js/toastr.min.js"></script>
+<script src="/dzelic/Conceptual/js/script.js"></script>
 
 </body>
 </html>

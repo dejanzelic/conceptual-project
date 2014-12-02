@@ -19,6 +19,7 @@ require("controllers/pages.php");
 require("controllers/session.php");
 require("controllers/account.php");
 require("controllers/product.php");
+require("controllers/order.php");
 
 
 /**

@@ -14,7 +14,7 @@
 $config['jcartPath']              = 'jcart/';
 
 // Path to your checkout page
-$config['checkoutPath']           = 'checkout.php';
+$config['checkoutPath']           = '/dzelic/Conceptual/index.php/checkout';
 
 // The HTML name attributes used in your item forms
 $config['item']['id']             = 'my-item-id';    // Item id

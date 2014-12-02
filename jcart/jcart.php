@@ -473,7 +473,7 @@ class Jcart {
 
 		// Display the cart header
 		echo tab(1) . "$errorMessage\n";
-		echo tab(1) . "<form method='post' action='$checkout'>\n";
+		echo tab(1) . "<form method='post' action='/dzelic/Conceptual/index.php/checkout'>\n";
 		echo tab(2) . "<fieldset>\n";
 		echo tab(3) . "<input type='hidden' name='jcartToken' value='{$_SESSION['jcartToken']}' />\n";
 		echo tab(3) . "<table border='1'>\n";
@@ -497,7 +497,8 @@ class Jcart {
 				$inputType = "image";
 				$src = " src='{$config['button']['checkout']}' alt='{$config['text']['checkout']}' title='' ";
 			}
-			echo tab(7) . "<input type='$inputType' $src id='jcart-checkout' name='jcartCheckout' class='jcart-button' value='{$config['text']['checkout']}' />\n";
+//            <button class="btn btn-danger">Log out</button>
+			echo tab(7) . "<button type='$inputType' $src id='jcart-checkout' name='jcartCheckout' class='jcart-button btn btn-primary' >{$config['text']['checkout']}</button>\n";
 		}
 
 		echo tab(7) . "<span id='jcart-subtotal'>{$config['text']['subtotal']}: <strong>$currencySymbol" . number_format($this->subtotal, $priceFormat['decimals'], $priceFormat['dec_point'], $priceFormat['thousands_sep']) . "</strong></span>\n";
@@ -544,6 +545,7 @@ class Jcart {
 
 		echo tab(3) . "<div id='jcart-buttons'>\n";
 
+        $src = "";
 		if ($config['button']['update']) {
 			$inputType = "image";
 			$src = " src='{$config['button']['update']}' alt='{$config['text']['update']}' title='' ";

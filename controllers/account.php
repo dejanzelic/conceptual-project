@@ -9,7 +9,7 @@ $app->get(
                 'title' => 'Account',
                 'subtitle'=> 'Manage your Account'
             ));
-        }else{
+        } else {
             $app->flash('warning', 'You need to be logged in to view your account!');
             $app->redirect('/dzelic/Conceptual/index.php/login');
         }
@@ -31,7 +31,7 @@ $app->post(
         if ($update['success'] === true) {
             $app->flash('success', $update['message']);
             $app->redirect('/dzelic/Conceptual/index.php/account');
-        } else{
+        } else {
             $app->flash('error', $update['message']);
             $app->redirect('/dzelic/Conceptual/index.php/account');
         }

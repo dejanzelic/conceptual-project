@@ -7,14 +7,9 @@ $app->map('/product/:slug', function($slug) use ($app) {
             'title' => $product->name,
             'subtitle' => $product->subtitle,
             'product' => $product,
-            'route'=>'http://gogole.com/dzelic/Conceptual/product/'.$slug
+            'route'=>'/dzelic/Conceptual/product/'.$slug
         ));
     }else{
         $app->notFound();
     }
 })->via('GET', 'POST');
-
-//ajax method
-
-
- 

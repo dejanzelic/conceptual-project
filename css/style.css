@@ -23,6 +23,9 @@
 .ConNotes{
     background-image: url('../images/connotes.jpg');
 }
+.Check-Out{
+    background-image: url('../images/Check-Out.jpg');
+}
 .banner{
     background-size: cover;
     height: 350px;
@@ -82,7 +85,6 @@
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     color: #E4E4E1;
     text-decoration: none;
-    background-color: #7C8997;
 }
 .navbar-slate {
     background-color: #556270;
@@ -213,6 +215,24 @@ fieldset[disabled] .navbar-slate .btn-link:focus {
 .btn-wide{
     width:100%;
 }
+.linkButton{
+    display: block;
+}
+.dropdown-menu>li>.btn-danger:hover, .dropdown-menu>li>.btn-danger:focus {
+    background-color: #c9302c;
+}
+.dropdown-menu>li>.btn-info:hover, .dropdown-menu>li>.btn-info:focus {
+    background-color: #31b0d5;
+}
+.dropdown-menu>li>a{
+    color: white;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+    color: #262626;
+}
+.myaccount{
+    margin-bottom: 10px;
+}
 /*========================Jcart===========================*/
 #jcart{
     color: white;
@@ -226,7 +246,10 @@ fieldset[disabled] .navbar-slate .btn-link:focus {
 .loggedIn{
     width: 350px;
 }
-
+.nameLable {
+    color: white;
+    text-decoration: none;
+}
 /*========================Content===========================*/
 p{
     font-size: 20px;
@@ -268,6 +291,16 @@ h1, h2, h3 {
 .thumbnail{
     height: 80px;
 }
+.store-images img {
+    height: 59px;
+}
+.store-images{
+    margin-top: 100px;
+}
+.showcase {
+    width: 100%;
+    max-width: 750px;
+}
 /*========================Product===========================*/
 .prod_image img{
     width: 100%;
@@ -290,4 +323,10 @@ h1, h2, h3 {
     width: 100%;
     height: 60px;
     margin-bottom: 20px;
+}
+/*========================Footer===========================*/
+footer{
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }

@@ -31,6 +31,20 @@ $app->post(
 
     }
 );
+$app->get(
+    '/login/demoaccount',
+    function () use ($app) {
+        $successLogin = User::login('johndoe@sample.com','Sup3r Secur3 CleAr T3xt PAss');
+        if( $successLogin !== null){
+            $app->flash('success', 'You have logged in with the Demo Account!');
+            $app->redirect('/dzelic/Conceptual/index.php');
+        } else {
+            $app->flash('error', 'Hmmm seems like somebody deleted the Demo Account or changed the password');
+            $app->redirect('/dzelic/Conceptual/index.php/login');
+        }
+
+    }
+);
 
 $app->get(
     '/logout',
@@ -46,7 +60,8 @@ $app->post(
         $register = User::register($_POST['email'], $_POST['name'], hash('SHA256',$_POST['password']));
         if ($register['success'] === true){
             $app->flash('success', $register['message']);
-            $app->redirect('/dzelic/Conceptual/index.php/login');
+            $login = User::login($_POST['email'],$_POST['password']);
+            $app->redirect('/dzelic/Conceptual/index.php');
         }else{
             $app->flash('error', $register['message']);
             $app->redirect('/dzelic/Conceptual/index.php/login');

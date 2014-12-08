@@ -14,11 +14,19 @@
             "hideEasing": "linear",
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
-        }
+        };
+        var $btn = $('.add-to-cart');
 
-        $('.add-to-cart').on('click', function(e){
-            toastr.success("Your product has been added to the cart!", "Added");
+        $btn.on('click', function(e){
             var $dropdown = $('.navbar-right .dropdown-toggle ');
+
+            if($btn.data('availible')){
+                toastr.success("Your product has been added to the cart!", "Added");
+            }else{
+                toastr.error("You need to be logged in to add items to cart", "Failed");
+                e.preventDefault();
+            }
+
             if (!$dropdown.parents('.dropdown').hasClass('open')){
                 $dropdown.dropdown('toggle');
 

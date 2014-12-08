@@ -6,7 +6,7 @@ $jcart = $this->getData('jcart');
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <meta charset='utf-8''>
+    <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta name='author' content='dejanzelic@gmail.com'>
@@ -14,9 +14,10 @@ $jcart = $this->getData('jcart');
     <title>Conceptual - <?php echo $this->data->title; ?></title>
 
     <!-- CSS -->
-    <link href='/dzelic/Conceptual/css/bootstrap.min.css' rel='stylesheet''>
+
+    <link href='/dzelic/Conceptual/css/bootstrap.min.css' rel='stylesheet'>
     <link href="/dzelic/Conceptual/css/toastr.min.css" rel="stylesheet"/>
-    <link href='/dzelic/Conceptual/css/style.css' rel='stylesheet''>
+    <link href='/dzelic/Conceptual/css/style.css' rel='stylesheet'>
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -63,12 +64,12 @@ $jcart = $this->getData('jcart');
                         <li class="dropdown <?php if($this->data->title == "Log-in" || $this->data->title == "Account"){ echo 'active';}?>">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button">Hello, <?php echo $user->name; ?><span class="caret"></span></a>
                             <ul class="dropdown-menu loggedIn" role="menu">
-                                <p><a href="/dzelic/Conceptual/index.php/account">
-                                    <button class="btn btn-info">My Account</button>
-                                </a></p>
-                                <p></p><a href="/dzelic/Conceptual/index.php/logout">
-                                    <button class="btn btn-danger">Log out</button>
-                                </a></p>
+                                <li><a class="btn btn-info linkButton in-list myaccount" href="/dzelic/Conceptual/index.php/account">
+                                    My Account
+                                </a></li>
+                                <li><a class="btn btn-danger linkButton in-list" href="/dzelic/Conceptual/index.php/logout">
+                                    Log out
+                                </a></li>
                                 <li id="jcart"><?php $jcart->display_cart();?></li>
 
                             </ul>
@@ -79,14 +80,17 @@ $jcart = $this->getData('jcart');
                             <li class="dropdown <?php if($this->data->title == "Log-In"){ echo 'active';}?>">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Log In <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <form class="navbar-form" action="/dzelic/Conceptual/index.php/login" method="post">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Enter Email">
-                                            <input type="password" class="form-control" name="password" placeholder="Enter Password">
-                                            <div class="register"><a href="/dzelic/Conceptual/index.php/login">Click Here to Register</a></div>
-                                            <button type="submit" class="btn btn-default">Log In</button>
-                                        </div>
-                                    </form>
+                                    <li>
+                                        <form class="navbar-form" action="/dzelic/Conceptual/index.php/login" method="post">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                                <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                                                <button type="submit" class="btn btn-default">Log In</button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                    <li><a href="/dzelic/Conceptual/index.php/login">Click Here to Register</a></li>
+                                    <li><a href="/dzelic/Conceptual/index.php/login/demoaccount">Click Here Log In W/ Demo Account</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -99,7 +103,7 @@ $jcart = $this->getData('jcart');
 
 <div class="container">
     <!--+++++++++++++++++Success++++++++++++++++++++++-->
-    <?php if (isset($flash['success'])){  ?>
+    <?php  if (isset($flash['success'])){  ?>
 
         <div class="alert alert-success" role="alert">
             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
@@ -123,6 +127,14 @@ $jcart = $this->getData('jcart');
     <!--+++++++++++++++++Content++++++++++++++++++++++-->
     <?php echo $this->content; ?>
 </div>
+
+<footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+        <p>Designed by Dejan Zelic</p>
+        <p>With help from <a href="http://www.slimframework.com/">SlimPHP</a>, <a href="http://getbootstrap.com/">Bootstrap</a>, <a href="http://jquery.com/">jQuery</a>, <a href="https://github.com/CodeSeven/toastr">Toastr</a>, and <a href="http://conceptlogic.com/jcart/">jCart</a></p>
+    </div>
+</footer>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src='/dzelic/Conceptual/js/bootstrap.min.js'></script>
 <script src='/dzelic/Conceptual/js/jcart.js'></script>

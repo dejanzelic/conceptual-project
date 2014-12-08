@@ -66,7 +66,7 @@ $(function() {
 			// Default settings for Ajax requests
 			$.ajaxSetup({
 				type: 'POST',
-				url: 'http://localhost/dzelic/Conceptual/index.php/cart',
+				url: '/dzelic/Conceptual/index.php/cart',
 				success: function(response) {
 					// Refresh the cart display after a successful Ajax request
 					container.html(response);

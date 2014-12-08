@@ -30,3 +30,11 @@ $app->get(
         ));
     }
 );
+$app->get(
+    '/thankyou',
+    function () use ($app) {
+        $app->flash('success', 'Thank you for your email!');
+        $app->redirect('/dzelic/Conceptual/index.php/contactus');
+
+    }
+);

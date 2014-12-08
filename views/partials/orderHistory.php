@@ -25,7 +25,7 @@ $orders = $user->getOrders();
             <?php foreach ($details as $detail){ ?>
                 <?php $product = $detail->getProduct(); ?>
                 <tr>
-                    <td><img class="thumbnail" src="<?php echo $product->image ?>"></td>
+                    <td><img alt="Product image" class="thumbnail" src="<?php echo $product->image ?>"></td>
                     <td><?php echo $product->name ?></td>
                     <td><?php echo $detail->qty ?></td>
                     <td><?php echo $product->price ?></td>
